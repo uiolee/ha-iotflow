@@ -1,0 +1,10 @@
+{
+  "domain": "iotflow",
+  "name": "iotflow",
+  "codeowners": ["@uiolee"],
+  "config_flow": true,
+  "documentation": "https://github.com/uiolee/ha-iotflow",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "version": "0.27.0"
+}

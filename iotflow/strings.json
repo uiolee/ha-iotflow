@@ -1,0 +1,110 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "This SIM card is already configured for this API endpoint.",
+      "reauth_successful": "Re-authentication was successful"
+    },
+    "error": {
+      "api_error": "The flow query service returned an error: {error}",
+      "cannot_connect": "Failed to connect to the flow query service: {error}",
+      "invalid_card": "The SIM card number does not exist."
+    },
+    "step": {
+      "reauth_confirm": {
+        "data": {
+          "card": "SIM card number"
+        },
+        "data_description": {
+          "card": "The SIM card number used by the flow query service."
+        },
+        "description": "The flow query service stopped accepting the SIM card number of **{name}**. Enter a card number that the service accepts.",
+        "title": "Re-authenticate SIM card"
+      },
+      "user": {
+        "data": {
+          "card": "SIM card number",
+          "endpoint": "API endpoint",
+          "update_interval": "Update interval",
+          "url": "API base URL"
+        },
+        "data_description": {
+          "card": "The SIM card number used by the flow query service.",
+          "endpoint": "Endpoint of the flow query service used to fetch the SIM card data.",
+          "update_interval": "Minutes to wait before the flow data is fetched again.",
+          "url": "Base URL of the flow query service. Only change this if you were told to."
+        },
+        "description": "Add a SIM card to monitor its data usage.",
+        "sections": {
+          "advanced": {
+            "data": {
+              "retries": "Retries",
+              "retry_interval": "Retry interval",
+              "timeout": "Request timeout"
+            },
+            "data_description": {
+              "retries": "Maximum number of request attempts before an update is considered failed.",
+              "retry_interval": "Seconds to wait between two request attempts.",
+              "timeout": "Seconds to wait for a single request before it is aborted."
+            },
+            "name": "Advanced settings"
+          }
+        },
+        "title": "Add SIM card"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "expiry_time": {
+        "name": "Expiry time"
+      },
+      "last_update": {
+        "name": "Last update"
+      },
+      "remaining_flow": {
+        "name": "Remaining flow"
+      },
+      "total_flow": {
+        "name": "Total flow"
+      },
+      "used_flow": {
+        "name": "Used flow"
+      }
+    }
+  },
+  "issues": {
+    "api_error": {
+      "description": "The flow query service could not return the flow data of SIM card `{card}`: {error}\n\nThe sensors keep the values of the last successful query until the service answers successfully again.",
+      "title": "The flow query service returned an error"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "update_interval": "Update interval"
+        },
+        "data_description": {
+          "update_interval": "Minutes to wait before the flow data is fetched again."
+        },
+        "description": "Adjust how the flow query service is contacted and how often the flow data is fetched.",
+        "sections": {
+          "advanced": {
+            "data": {
+              "retries": "Retries",
+              "retry_interval": "Retry interval",
+              "timeout": "Request timeout"
+            },
+            "data_description": {
+              "retries": "Maximum number of request attempts before an update is considered failed.",
+              "retry_interval": "Seconds to wait between two request attempts.",
+              "timeout": "Seconds to wait for a single request before it is aborted."
+            },
+            "name": "Advanced settings"
+          }
+        },
+        "title": "Settings"
+      }
+    }
+  }
+}
